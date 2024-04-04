@@ -1,0 +1,142 @@
+@import "../variables.less";
+
+.contactPage {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem; // 已移除了右侧的padding值，因为下面设置了宽度为90vw
+  background-color: @contactBoardColor;
+  height: auto; // 高度设置为auto，内容将定义其高度
+  width: 90vw; // 使用视窗宽度的百分比来定义宽度
+  align-items: center;
+  margin: auto; // 水平居中
+  flex-wrap: wrap; // 允许子项在不足以放下时换行
+  max-width: 1200px; // 可以设置一个最大宽度，确保内容在大屏幕上不会过宽
+  // 注意：可能需要根据您的设计调整这个值
+}
+
+.contactInfoBoard {
+  position: relative;
+  background-color: @contactInfoBoardColor;
+  color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%; // 这意味着它会尽可能占据所有可用空间
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1; // 会填充父元素的空间，但是也受到了max-width的限制
+  height: 40vw; // 高度基于视窗宽度的百分比
+  max-height: 400px; // 最大高度，防止过高
+  // 注意：可能需要根据您的设计调整这个值
+  // 如果想保持比例，也可以设置height为一个固定的百分比
+  max-width: 500px; // 最大宽度
+  overflow: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30%; // Diameter of the circle
+    height: 0; //Initially set height to 0
+    padding-top: 30%; // This padding-top trick maintains the aspect ratio, making the element a circle
+    background-color: rgba(255, 255, 255, 0.2); // Use appropriate color
+    border-radius: 50%;
+    z-index:  1;
+    // Positioning the circle with its center at 75% from the top
+    top: 65%;
+    transform: translate(-50%, -50%); // This centers the circle at the desired position
+    left: 76%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 50%; // Diameter of the circle
+    height: 0; //Initially set height to 0
+    padding-top: 50%; // This padding-top trick maintains the aspect ratio, making the element a circle
+    background-color: rgba(255, 255, 255, 0.2); // Use appropriate color
+    border-radius: 50%;
+    z-index:  1;
+    // Positioning the circle with its center at 75% from the top
+    top: 89%;
+    transform: translate(-50%, -50%); // This centers the circle at the desired position
+    left: 96%;
+  }
+
+  .h2 {
+    margin-bottom: 1rem;
+  }
+
+  .contactInfo {
+    p {
+      margin: 0.5rem 0;
+      line-height: 1.6;
+      i {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
+// ... existing styles ...
+
+.contactFormBoard {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      textarea {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        
+        &:focus {
+          outline: none;
+          border-bottom: 2px solid #6658f6; // A purple color similar to your button
+        }
+        
+        &::placeholder {
+          color: #aaa;
+        }
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"] {
+        height: 2.5rem;
+      }
+      
+      textarea {
+        resize: none; // Prevent resizing the textarea
+        height: 5rem; // Fixed height for textarea
+      }
+    }
+    
+    .send-message-btn {
+      grid-column: span 2; // Button spans two columns
+      padding: 0.75rem 1.5rem;
+      background-color: #6658f6; // A purple color similar to your design
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      
+      &:hover {
+        background-color: darken(#6658f6, 10%); // Darken on hover
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+@import "../variables";
+
+.fa-list-icon {
+  width: 36px;
+  height: 36px;
+  color: @linkColor;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+  font-size: @headLinkSize;
+  padding: 0;
+
+  li {
+    margin: 0 20px; 
+    @media (min-width: 601px) {
+      .fa-list-icon {
+        display: inline-block;
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: @linkColor;
+
+      &:hover {
+        color: @linkHoverColor;
+      }
+    }
+  }
+}
+
+.headNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: auto; // Use auto height to allow the header to grow in height
+  background: @headBackgroundColor;
+  padding: 0 20px;
+
+  .team-icon {
+    height: 72px;
+    width: auto; 
+  }
+}
+
+
+.headIconSpace {
+  margin-left: 8px;
+}

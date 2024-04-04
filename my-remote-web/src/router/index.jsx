@@ -4,10 +4,12 @@ import Home from '../pages/Home';
 import Publication from '../pages/Publication';
 import Contact from '../pages/Contact';
 import Research from '../pages/Research';
+import HeadNav from '../components/head-nav';
 
 const AppRouter = () => {
   return (
     <Router>
+      <HeadNav/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/bio" element={<Bio />} />
@@ -17,6 +19,7 @@ const AppRouter = () => {
         <Route path="/research" element={<Research />} />
       </Routes>
     </Router>
+
   );
 };
 
