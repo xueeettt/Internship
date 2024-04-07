@@ -55,7 +55,6 @@ const Contact = () => {
       <div className='contactBoard'>
         <ContactBoard/>
       </div>
-      
     </div>
   );
 };

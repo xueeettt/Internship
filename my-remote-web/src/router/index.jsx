@@ -5,6 +5,7 @@ import Publication from '../pages/Publication';
 import Contact from '../pages/Contact';
 import Research from '../pages/Research';
 import HeadNav from '../components/head-nav';
+import BottomNav from '../components/bottom-nav';
 
 const AppRouter = () => {
   return (

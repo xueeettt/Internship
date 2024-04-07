@@ -10,13 +10,13 @@ const ContactBoard = () => {
         <h2>Contact Information</h2>
         <div className="contactInfo">
           <p>
-            <FontAwesomeIcon icon={faPhone} />
+            <FontAwesomeIcon icon={faPhone} />&nbsp;&nbsp;&nbsp;
             +1012 3456 789</p>
           <p>
-            <FontAwesomeIcon icon={faEnvelope} />
+            <FontAwesomeIcon icon={faEnvelope} />&nbsp;&nbsp;&nbsp;
             demo@gmail.com</p>
           <p>
-            <FontAwesomeIcon icon={faLocationDot} />
+            <FontAwesomeIcon icon={faLocationDot} />&nbsp;&nbsp;&nbsp;
             132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
         </div>
       </div>
