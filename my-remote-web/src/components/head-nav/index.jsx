@@ -3,7 +3,7 @@ import "./style.less";
 import TeamIcon from "../../assets/images/Remote-icon.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faList } from "@fortawesome/free-solid-svg-icons";
-import LinkMenu from "../linkMenu";
+import LinkMenuHead from "../linkMenuHead";
 
 const HeadNav = () => {
   const [isNarrowScreen, setIsNarrowScreen] = useState(window.innerWidth <= 700);
@@ -12,8 +12,8 @@ const HeadNav = () => {
   useEffect(() => {
     function handleResize() {
       // 更新窄屏状态并在屏幕变宽时关闭菜单
-      setIsNarrowScreen(window.innerWidth <= 700);
-      if (window.innerWidth > 700) {
+      setIsNarrowScreen(window.innerWidth <= 830);
+      if (window.innerWidth > 830) {
         setShowLinks(false);
       }
     }
@@ -35,14 +35,14 @@ const HeadNav = () => {
         <>
           {showLinks ? (
             <div>
-              <LinkMenu className="navLinks" />
+              <LinkMenuHead className="navLinks" />
             </div>
           ) : (
             <FontAwesomeIcon icon={faList} className="fa-list-icon" onClick={handleIconClick} />
           )}
         </>
       )}
-      {!isNarrowScreen && <LinkMenu className="navLinks"/>}
+      {!isNarrowScreen && <LinkMenuHead className="navLinks"/>}
     </nav>
   );
 }

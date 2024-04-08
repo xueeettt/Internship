@@ -1,10 +1,11 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import "./style.less";
 
-const LinkMenu = (props) => {
+const LinkMenuHead = (props) => {
   return (
-    <ul className={`linkMenu ${props.className}`}>
+    <ul className="linkMenuHead">
       <li><a href="/">Home</a></li>
       <li>
         <a href="/#/research">Research</a>
@@ -25,4 +26,4 @@ const LinkMenu = (props) => {
   );
 }
 
-export default LinkMenu;
+export default LinkMenuHead;

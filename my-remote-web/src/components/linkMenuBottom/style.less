@@ -1,0 +1,28 @@
+.linkMenuBottom {
+  list-style-type: none;
+  overflow: hidden;
+  
+  li {
+    display: inline;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    
+    &:not(:last-child):after {
+      content: "•";
+      position: absolute;
+      right: -5px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  
+  a {
+    display: inline-block;
+    padding: 0 20px; // Adjust padding to manage spacing
+    text-decoration: none;
+    &:hover {
+      color: pink;
+    }
+  }
+}

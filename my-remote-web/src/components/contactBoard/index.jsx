@@ -11,7 +11,8 @@ const ContactBoard = () => {
         <div className="contactInfo">
           <p>
             <FontAwesomeIcon icon={faPhone} />&nbsp;&nbsp;&nbsp;
-            +1012 3456 789</p>
+            +1012 3456 789
+          </p>
           <p>
             <FontAwesomeIcon icon={faEnvelope} />&nbsp;&nbsp;&nbsp;
             demo@gmail.com</p>
