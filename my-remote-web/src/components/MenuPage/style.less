@@ -1,0 +1,25 @@
+@import "../variables"; // 确保这里的路径是正确的
+
+.menu-display {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  background-color: @linkColor;
+  gap: 50px;
+
+  a {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    &:hover {
+      color: pink;
+    }
+  }
+}

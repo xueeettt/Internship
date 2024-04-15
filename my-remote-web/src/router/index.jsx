@@ -23,23 +23,27 @@ const AppRouter = () => {
     return () => window.removeEventListener('resize', updateScreenSize);
   }, [updateScreenSize]);
 
+  const handleMenuClick = () => {
+    setShowLinks(false);
+  };
+
   return (
     <Router>
       <HeadNav isNarrowScreen={isNarrowScreen} showLinks={showLinks} handleMenuClick={() => setShowLinks(!showLinks)} />
       {
         isNarrowScreen && showLinks ? (
           <div>
-            <MenuPage/>
+            <MenuPage onMenuItemClick={handleMenuClick} />
           </div>
         ) : (
           <div className="main-content">
             <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/bio" element={<Bio />} />
-                <Route path="/research" element={<Research />} />
-                <Route path="/contact" element={<Contact />} />
-                <Route path="/publication" element={<Publication />} />
-                <Route path="/research" element={<Research />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/bio" element={<Bio />} />
+              <Route path="/research" element={<Research />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/publication" element={<Publication />} />
+              <Route path="/research" element={<Research />} />
             </Routes>
           </div>
         )
