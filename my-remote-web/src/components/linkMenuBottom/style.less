@@ -1,3 +1,5 @@
+@import "../variables";
+
 .linkMenuBottom {
   list-style-type: none;
   overflow: hidden;
@@ -19,7 +21,8 @@
   
   a {
     display: inline-block;
-    padding: 0 20px; // Adjust padding to manage spacing
+    padding: 0 20px;
+    color: @linkColor;
     text-decoration: none;
     &:hover {
       color: pink;

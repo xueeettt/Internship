@@ -1,50 +1,48 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import "./style.less";
 import TeamIcon from "../../assets/images/Remote-icon.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faList } from "@fortawesome/free-solid-svg-icons";
+import { faList, faXmark } from "@fortawesome/free-solid-svg-icons";
 import LinkMenuHead from "../linkMenuHead";
 
-const HeadNav = () => {
-  const [isNarrowScreen, setIsNarrowScreen] = useState(window.innerWidth <= 700);
-  const [showLinks, setShowLinks] = useState(false);
+const HeadNav = ({ isNarrowScreen, handleMenuClick, showLinks }) => {
 
   useEffect(() => {
     function handleResize() {
-      // 更新窄屏状态并在屏幕变宽时关闭菜单
-      setIsNarrowScreen(window.innerWidth <= 830);
-      if (window.innerWidth > 830) {
-        setShowLinks(false);
+      if (window.innerWidth > 885) {
+        handleMenuClick(false);
       }
     }
 
     window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  const handleIconClick = () => {
-    setShowLinks(prevState => !prevState);
-  }
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [handleMenuClick]);
 
   return (
     <nav className="headNav">
       <div>
-        <img src={ TeamIcon } alt="team-icon" className="team-icon" />
+        <img src={TeamIcon} alt="team-icon" className="team-icon" />
       </div>
       {isNarrowScreen && (
-        <>
-          {showLinks ? (
-            <div>
-              <LinkMenuHead className="navLinks" />
-            </div>
-          ) : (
-            <FontAwesomeIcon icon={faList} className="fa-list-icon" onClick={handleIconClick} />
-          )}
-        </>
+        showLinks ? (
+          <FontAwesomeIcon 
+            icon={faXmark} 
+            className="fa-list-icon" 
+            onClick={() => handleMenuClick(false)}
+          />
+        ) : (
+          <FontAwesomeIcon 
+            icon={faList} 
+            className="fa-list-icon" 
+            onClick={() => handleMenuClick(true)}
+          />
+        )
       )}
-      {!isNarrowScreen && <LinkMenuHead className="navLinks"/>}
+      {!isNarrowScreen && <LinkMenuHead className="navLinks" />}
     </nav>
   );
-}
+};
 
 export default HeadNav;

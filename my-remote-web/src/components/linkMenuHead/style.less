@@ -1,3 +1,5 @@
+@import "../variables";
+
 .linkMenuHead {
   list-style-type: none;
   margin: 0;
@@ -18,10 +20,11 @@
   a {
     display: inline-block;
     text-align: center;
-    padding: 25px; /* Adjust padding to manage spacing */
+    color: @linkColor;
+    padding: 25px;
     text-decoration: none;
-    font-size: 20px; /* 这里设置字体大小 */
-    font-weight: bold; /* 这里设置文字加粗 */
+    font-size: 20px;
+    font-weight: bold;
     &:hover {
       color: pink;
     }
