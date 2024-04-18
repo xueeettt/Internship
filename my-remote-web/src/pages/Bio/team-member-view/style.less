@@ -1,0 +1,71 @@
+.team ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  
+  li {
+    margin-top: 40px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .img-container {
+      width:400px;
+      height: 400px;
+      overflow: hidden;
+      margin-bottom: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .affiliations {
+      font-style: italic;
+      padding-bottom: 20px;
+      margin-right: 40px;
+    }
+
+    .bio-container {
+      width: auto;
+    }
+    
+    .name-position {
+      font-size: 22px;
+      font-weight: bold;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      width: 100%;
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+      span {
+        &:first-child {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+}
+
+span {
+  margin-right: 40px;
+}
+
+@media (max-width: 600px) {
+  .team ul {
+    justify-content: center;
+  }
+
+  .team ul li {
+    flex: 0 0 100%;
+  }
+}
