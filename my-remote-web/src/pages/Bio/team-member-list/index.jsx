@@ -5,8 +5,6 @@ import TeamMemberView from "../team-member-view";
 const TeamMemberList = ( selectedRole ) => {
   
   const [memberList, setMemberList] = useState([]);
-  console.log(selectedRole);
-  
 
   useEffect(() => {
     api.getTeamBio().then(res => {
@@ -14,6 +12,7 @@ const TeamMemberList = ( selectedRole ) => {
         const filteredMembers = res.data.filter(member => 
           member.position === selectedRole.selectedRole
         );
+        console.log(res.data);
         setMemberList(filteredMembers);
       }
     });

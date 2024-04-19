@@ -33,4 +33,31 @@ router.get('/bio/team-member', async (req, res) => {
   }
 })
 
+/**
+ * Get research info
+ */
+router.get('/research/content', async (req, res) => {
+  try {
+    await client.connect();
+    console.log("Connect to MongoDB");
+    const db = client.db(dbName);
+    const collection = db.collection('Research');
+    const researches = await collection.find({}).toArray();
+    
+    const transformedResearches = researches.map(doc => {
+      return Object.keys(doc)
+        .filter(key => key !== '_id')
+        .map(key => doc[key]);
+    }).flat(); 
+
+    res.json(transformedResearches);
+
+  } catch (e) {
+    console.error('Failed to fetch research info', e);
+    res.status(500).send('Error fetching research info');
+  } finally {
+    await client.close();
+  }
+})
+
 module.exports = router;

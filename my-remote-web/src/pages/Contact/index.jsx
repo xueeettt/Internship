@@ -21,7 +21,7 @@ const Contact = () => {
         title: 'Location'
       });
     };
-    // Assign initMap to window object to ensure it's callable globally
+
     window.initMap = initMap;
 
     // Check if the Google Maps script is already loaded by checking for the google maps object
