@@ -1,10 +1,44 @@
 const express = require('express');
 const router = express.Router();
 const { MongoClient} = require('mongodb');
+const nodemailer = require('nodemailer');
 
 const mongoUrl = "mongodb://localhost:27017";
 const dbName = "my-remote-web";
-const client = new MongoClient(mongoUrl, { useUnifiedTopology: true });
+const client = new MongoClient(mongoUrl);
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'ai.zxt19990330@gmail.com',
+    pass: 'qlaz pvix vuqs ywip'
+  }
+});
+
+/**
+ * Send email
+ */
+router.post('/contact/send-email', async (req, res) => {
+  const { email, message, phone, firstName, lastName } = req.body;
+
+  try {
+    let info = await transporter.sendMail({
+      from: email,
+      replyTo: email,
+      to: 'ai.zxt19990330@gmail.com',
+      subject: `Remote-Web-Request from ${firstName} ${lastName}`,
+      text: `${message}\n${phone}\n${firstName} ${lastName}`,
+    });
+    console.log(email);
+    console.log(firstName);
+    console.log(lastName);
+    console.log('Message sent: %s', info.messageId);
+    res.send({ success: true, messageId: info.messageId });
+  } catch (error) {
+    console.error('Error occurred: ' + error.message);
+    res.status(500).send({ success: false, error: error.message });
+  }
+});
 
 /**
  * Get team member info
@@ -31,7 +65,7 @@ router.get('/bio/team-member', async (req, res) => {
   } finally {
     await client.close();
   }
-})
+});
 
 /**
  * Get research info
@@ -58,6 +92,6 @@ router.get('/research/content', async (req, res) => {
   } finally {
     await client.close();
   }
-})
+});
 
 module.exports = router;
