@@ -1,0 +1,214 @@
+@import "../../components/variables.less";
+
+.divider {
+  height: 2px;
+  background-color: rgb(109, 95, 135);
+  width: 95%;
+  margin: 0 auto;
+}
+
+.mission {
+  position: relative;
+  height: 150px;
+  width: 100%;
+}
+
+.mission-pic {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.translucent-red-box {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  background-color: rgba(226, 2, 8, 0.65);
+  width: 30%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+}
+
+@media (max-width: 1094px) {
+  .translucent-red-box {
+    min-width: 30%;
+    max-width: 70%;
+    width: auto; 
+  }
+}
+
+.translucent-red-box h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.translucent-red-box p {
+  font-size: 1rem;
+  margin: 0.5em;
+  text-align: center;
+}
+
+.presentation {
+  width: 100%;
+  margin-top: 20px;
+  // margin-bottom: 20px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.project {
+  width: 30%;
+  max-width: 550px;
+  //height: fit-content;
+}
+
+.presentation-text {
+  width: 50%;
+  padding: 0 40px;
+  padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.presentation-text h2 {
+  text-align: center;
+}
+
+.presentation-text ul {
+  margin-top: 0;
+}
+
+.button {
+  margin-top: 10px;
+  width: 200px;
+  height: 40px;
+  background-color: @contactInfoBoardColor; /* 确保这是有效的CSS变量或在 Less 中定义 */
+  color: white;
+  font-style: italic;
+  font-size: 0.8rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: white;
+  color: @contactInfoBoardColor;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.content2 {
+  display: flex;
+  color: white;
+  // flex-direction: row-reverse;  /* 文本在左，图片在右 */
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+  overflow: hidden;
+}
+
+.content2 .content2-text {
+  width: 55%;
+  padding: 0 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 确保所有子元素，包括按钮，都在水平方向上居中 */
+  justify-content: center; /* 可选，确保垂直方向上内容也居中，根据需要调整 */
+}
+
+
+.content2 .team-pic {
+  width: 60%;
+  max-width: 550px;
+  margin-right: 40px;
+}
+
+.citation {
+  width: 100%;
+  height: 180px;
+  position: relative;
+}
+
+.citation-background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.translucent-blue-box {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  background-color: rgba(2, 83, 84, 0.74);
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  flex-direction: row;
+}
+
+.citation-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.citation-text h2 {
+  margin: 0 5px;
+  text-align: center;
+}
+
+
+@media (max-width: 984px) {
+  .presentation {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .project {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .presentation-text {
+    width: 80%;
+    max-width: none;
+  }
+
+  .content2 {
+    flex-direction: column;
+  }
+
+  .content2-text {
+    width: 100%;
+    max-width: none;
+  }
+
+  .content2 .team-pic {
+    width: 80%;
+    margin-right: 0;
+  }
+
+
+}

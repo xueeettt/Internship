@@ -1,9 +1,31 @@
 import React from "react";
 import "./style.less";
+import api from "../../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const ContactBoard = () => {
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = {
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value, 
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      message: document.getElementById('message').value
+    };
+
+    try {
+      const response = await api.sendContactForm(formData);
+      alert('Message sent successfully!');
+      console.log(response.data);
+    } catch (error) {
+      alert('Failed to send message. Please try again later.');
+      console.error(error);
+    }
+  };
+
   return (
     <div className="contactPage">
       <div className="contactInfoBoard">
@@ -22,7 +44,7 @@ const ContactBoard = () => {
         </div>
       </div>
       <div className="contactFormBoard">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input type="text" id="firstName" placeholder="First Name" />
             <input type="text" id="lastName" placeholder="Last Name" />
