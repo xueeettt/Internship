@@ -147,6 +147,10 @@
   position: relative;
 }
 
+.citation h2 {
+  padding-bottom: 5px;
+}
+
 .citation-background {
   width: 100%;
   height: 100%;
@@ -176,6 +180,46 @@
 .citation-text h2 {
   margin: 0 5px;
   text-align: center;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  min-height: 400px;
+  height: 200px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+
+  .map {
+    height: 100%;
+    width: 50%;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 50px;
+    margin: 0;
+    display: flex;
+    // align-items: center;
+    // align-items: center;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  li {
+    margin-bottom: 30px;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &:hover {
+        color: @linkHoverColor;
+      }
+    }
+  }
 }
 
 

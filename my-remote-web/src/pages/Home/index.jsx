@@ -3,6 +3,7 @@ import MissionBackgroundImg from "../../assets/images/mission-background-pic.jpg
 import Project1Img from "../../assets/images/project-1.jpg";
 import Team from "../../assets/images/team.png";
 import Citation from "../../assets/images/citation-background.jpg";
+import GoogleMap from "../../components/google-map";
 import "./style.less";
 
 const Home = () => {
@@ -71,23 +72,35 @@ const Home = () => {
         <img src={Citation} alt="" className="citation-background"/>
         <div className="translucent-blue-box">
           <div className="citation-text">
-            <h2>65</h2>
+            <h2>956</h2>
             <h2>Citation Count</h2>
           </div>
           <div className="citation-text">
-            <h2>65</h2>
+            <h2>24</h2>
             <h2>H-Index</h2>
           </div>
           <div className="citation-text">
-            <h2>65</h2>
+            <h2>30.7</h2>
             <h2>Citation per Publication</h2>
           </div>
           <div className="citation-text">
-            <h2>65</h2>
+            <h2>38</h2>
             <h2>Scholarly Output</h2>
           </div>
 
         </div>
+      </div>
+      <div className="info-container">
+        <div className="map">
+          <GoogleMap apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />
+        </div>
+        
+        <ul>
+          <li style={{fontSize: '40px', color: 'white'}}>Links</li>
+          <li><a href="https://acmd.org.au/">ACMD</a></li>
+          <li><a href="https://services.unimelb.edu.au/health/">Health Center University of Melbourne</a></li>
+        </ul>
+
       </div>
     </div>
 
