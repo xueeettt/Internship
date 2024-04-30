@@ -2,7 +2,7 @@ import React from "react";
 import MissionBackgroundImg from "../../assets/images/mission-background-pic.jpg";
 import Project1Img from "../../assets/images/project-1.jpg";
 import Team from "../../assets/images/team.png";
-import Citation from "../../assets/images/citation-background.jpg";
+import Citation from "../../components/citation";
 import GoogleMap from "../../components/google-map";
 import "./style.less";
 
@@ -28,13 +28,13 @@ const Home = () => {
         </div>
       </div>
       <div className="presentation">
-        <img src={Project1Img} alt="" className="project"/>
+        {/* <img src={Project1Img} alt="" className="project"/> */}
         <div className="presentation-text">
           <h2>Presentation of the REMOD Lab</h2>
           <p>
             The REMOD Lab stands at the forefront of regenerative engineering and modeling in the realm of osteochondral disease. Osteochondral conditions, which affect the integrity of both cartilage and underlying bone, present significant challenges in orthopedic medicine. Our lab is dedicated to confronting these challenges head-on through a multifaceted approach that leverages expertise from diverse fields. 
           </p>
-          <h2>Key Focus Areas</h2>
+          {/* <h2>Key Focus Areas</h2>
           <p>
             <ul>
               <li>
@@ -50,7 +50,7 @@ const Home = () => {
                 Translation and Clinical Impact: At the REMOD Lab, we are committed to translating our scientific discoveries into clinical applications that directly benefit patients. Through collaborative partnerships with clinicians and industry stakeholders, we strive to accelerate the translation of promising technologies from the bench to the bedside. 
               </li>
             </ul>
-          </p>
+          </p> */}
           <button className="button" onClick={goToResearch}>GO TO OUR RESEARCH</button>
         </div>
       </div>
@@ -68,28 +68,7 @@ const Home = () => {
         </div>
         <img src={Team} alt="" className="team-pic"/>
       </div>
-      <div className="citation">
-        <img src={Citation} alt="" className="citation-background"/>
-        <div className="translucent-blue-box">
-          <div className="citation-text">
-            <h2>956</h2>
-            <h2>Citation Count</h2>
-          </div>
-          <div className="citation-text">
-            <h2>24</h2>
-            <h2>H-Index</h2>
-          </div>
-          <div className="citation-text">
-            <h2>30.7</h2>
-            <h2>Citation per Publication</h2>
-          </div>
-          <div className="citation-text">
-            <h2>38</h2>
-            <h2>Scholarly Output</h2>
-          </div>
-
-        </div>
-      </div>
+      <Citation/>
       <div className="info-container">
         <div className="map">
           <GoogleMap apiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} />
