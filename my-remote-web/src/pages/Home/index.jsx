@@ -1,4 +1,5 @@
-import React from "react";
+import {React} from "react";
+import { useNavigate } from 'react-router-dom';
 import MissionBackgroundImg from "../../assets/images/mission-background-pic.jpg";
 import Project1Img from "../../assets/images/project-1.jpg";
 import Team from "../../assets/images/team.png";
@@ -9,12 +10,21 @@ import "./style.less";
 const Home = () => {
 
   const goToResearch = () => {
-    window.location.href = "/#/research";
+    navigate('/research');
   }
 
   const goToPeople = () => {
-    window.location.href = "/#/bio";
+    navigate('/bio');
   }
+
+  // const [selectedResearch, setSelectedResearch] = useState(null);
+  const navigate = useNavigate();
+
+  const navigateToResearch = (researchName) => {
+    navigate(`/research?researchName=${researchName}`, { replace: true });
+    // setSelectedResearch(researchId);
+  }
+  
 
   return (
     <div>
@@ -28,29 +38,26 @@ const Home = () => {
         </div>
       </div>
       <div className="presentation">
-        {/* <img src={Project1Img} alt="" className="project"/> */}
+        
         <div className="presentation-text">
           <h2>Presentation of the REMOD Lab</h2>
           <p>
             The REMOD Lab stands at the forefront of regenerative engineering and modeling in the realm of osteochondral disease. Osteochondral conditions, which affect the integrity of both cartilage and underlying bone, present significant challenges in orthopedic medicine. Our lab is dedicated to confronting these challenges head-on through a multifaceted approach that leverages expertise from diverse fields. 
           </p>
-          {/* <h2>Key Focus Areas</h2>
-          <p>
-            <ul>
-              <li>
-                Regenerative Therapies: We investigate novel regenerative therapies aimed at promoting the repair and regeneration of damaged cartilage and bone tissues. By harnessing the body's innate regenerative capacity and developing advanced biomaterials and scaffolds, we strive to create innovative solutions for tissue repair and functional restoration. 
-              </li>
-              <li>
-                Engineering Solutions: Our lab employs principles of engineering to design and optimize biomaterials, implants, and tissue-engineered constructs for osteochondral regeneration. Through computational modeling, biomechanical analysis, and additive manufacturing techniques, we develop customized solutions tailored to individual patient needs. 
-              </li>
-              <li>
-                Disease Modeling: We utilize advanced modeling techniques, including computational simulations and in vitro/ex vivo models, to gain insights into the pathophysiology of osteochondral diseases. By elucidating disease mechanisms and exploring therapeutic targets, we aim to develop more effective interventions for disease prevention and treatment. 
-              </li>
-              <li>
-                Translation and Clinical Impact: At the REMOD Lab, we are committed to translating our scientific discoveries into clinical applications that directly benefit patients. Through collaborative partnerships with clinicians and industry stakeholders, we strive to accelerate the translation of promising technologies from the bench to the bedside. 
-              </li>
-            </ul>
-          </p> */}
+          <ul>
+            <li onClick = {() => navigateToResearch('Programmed oxygen environments for enhance engineered cartilage')}>
+              <img src={Project1Img} alt="" className="project"/>
+            </li>
+            <li onClick = {() => navigateToResearch('Programmed oxygen environments for enhance engineered cartilage_1')}>
+              <img src={Project1Img} alt="" className="project"/>
+            </li>
+            <li onClick = {() => navigateToResearch('Research Replace 3')}>
+              <img src={Project1Img} alt="" className="project"/>
+            </li>
+            <li onClick = {() => navigateToResearch('Research Replace 4')}>
+              <img src={Project1Img} alt="" className="project"/>
+            </li>
+          </ul>
           <button className="button" onClick={goToResearch}>GO TO OUR RESEARCH</button>
         </div>
       </div>

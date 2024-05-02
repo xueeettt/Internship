@@ -8,9 +8,8 @@ const ResearchList = ( selectedResearch ) => {
   useEffect(() => {
     api.getResearchInfo().then(res => {
       if (res.status === 200) {
-        console.log(selectedResearch);
         const filteredResearch = res.data.filter(research => research.name === selectedResearch.selectedResearch);
-        console.log(filteredResearch);
+        // console.log(filteredResearch);
         setResearch(filteredResearch);
       };
     });

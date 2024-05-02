@@ -43,7 +43,7 @@ const AppRouter = () => {
               <Route path="/research" element={<Research />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/publication" element={<Publication />} />
-              <Route path="/research" element={<Research />} />
+              <Route path="/research/:researchId" element={<Research />} />
             </Routes>
           </div>
         )

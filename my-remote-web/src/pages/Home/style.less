@@ -64,10 +64,18 @@
   overflow: hidden;
 }
 
-.project {
-  width: 30%;
-  max-width: 550px;
-  //height: fit-content;
+.presentation ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+.presentation .project {
+    width: 70%;
+    align-items: center;
+    justify-content: center;
 }
 
 .presentation-text {
@@ -194,12 +202,6 @@
   .presentation {
     flex-direction: column;
     overflow: hidden;
-  }
-
-  .project {
-    width: 80%;
-    align-items: center;
-    justify-content: center;
   }
 
   .presentation-text {

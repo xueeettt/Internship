@@ -53,9 +53,9 @@ router.get('/bio/team-member', async (req, res) => {
     
     const transformedTeamMembers = teamMembers.map(doc => {
       return Object.keys(doc)
-        .filter(key => key !== '_id') // 过滤掉 _id 键
-        .map(key => doc[key]); // 获取所有成员对象
-    }).flat(); // 因为 map 会返回一个二维数组，我们使用 flat 来将它降维成一维数组
+        .filter(key => key !== '_id')
+        .map(key => doc[key]);
+    }).flat();
 
     res.json(transformedTeamMembers);
 

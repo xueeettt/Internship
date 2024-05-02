@@ -2,7 +2,7 @@ import React from "react";
 import "./style.less";
 import ResearchList from "../research-list";
 
-const MainContentResearch = ({ selectedResearch }) => {
+const MainContentResearch = ({selectedResearch }) => {
   return (
     <section>
       <ResearchList selectedResearch={selectedResearch}/>
