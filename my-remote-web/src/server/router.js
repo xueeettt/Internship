@@ -10,8 +10,8 @@ const client = new MongoClient(mongoUrl);
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ai.zxt19990330@gmail.com',
-    pass: 'qlaz pvix vuqs ywip'
+    user: process.env.REACT_APP_EMAIL_ADDRESS,
+    pass: process.env.REACT_APP_EMAIL_PASS
   }
 });
 
