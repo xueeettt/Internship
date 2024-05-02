@@ -1,17 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { MongoClient} = require('mongodb');
 const nodemailer = require('nodemailer');
-
-const mongoUrl = "mongodb://localhost:27017";
-const dbName = "my-remote-web";
-const client = new MongoClient(mongoUrl);
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.REACT_APP_EMAIL_ADDRESS,
-    pass: process.env.REACT_APP_EMAIL_PASS
+    user: 'ai.zxt19990330@gmail.com',
+    pass: 'qlaz pvix vuqs ywip'
   }
 });
 
@@ -44,37 +39,31 @@ router.post('/contact/send-email', async (req, res) => {
  * Get team member info
  */
 router.get('/bio/team-member', async (req, res) => {
+  const db = req.app.locals.db;
   try {
-    await client.connect();
-    console.log("Connect to MongoDB");
-    const db = client.db(dbName);
     const collection = db.collection('Bio');
     const teamMembers = await collection.find({}).toArray();
-    
+    console.log(teamMembers);
     const transformedTeamMembers = teamMembers.map(doc => {
       return Object.keys(doc)
-        .filter(key => key !== '_id')
-        .map(key => doc[key]);
-    }).flat();
+        .filter(key => key !== '_id') // 过滤掉 _id 键
+        .map(key => doc[key]); // 获取所有成员对象
+    }).flat(); // 因为 map 会返回一个二维数组，我们使用 flat 来将它降维成一维数组
 
     res.json(transformedTeamMembers);
 
   } catch (e) {
     console.error('Failed to fetch team member info', e);
     res.status(500).send('Error fetching team member info');
-  } finally {
-    await client.close();
-  }
+}
 });
 
 /**
  * Get research info
  */
 router.get('/research/content', async (req, res) => {
+  const db = req.app.locals.db;
   try {
-    await client.connect();
-    console.log("Connect to MongoDB");
-    const db = client.db(dbName);
     const collection = db.collection('Research');
     const researches = await collection.find({}).toArray();
     
@@ -87,11 +76,9 @@ router.get('/research/content', async (req, res) => {
     res.json(transformedResearches);
 
   } catch (e) {
-    console.error('Failed to fetch research info', e);
-    res.status(500).send('Error fetching research info');
-  } finally {
-    await client.close();
-  }
+    console.error('Failed to fetch team member info', e);
+    res.status(500).send('Error fetching team member info');
+}
 });
 
 module.exports = router;
