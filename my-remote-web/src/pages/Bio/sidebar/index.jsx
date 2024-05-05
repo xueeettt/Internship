@@ -4,7 +4,7 @@ import "./style.less";
 const Sidebar = ({ roles, onRoleSelected}) => {
 
   return (
-    <aside>
+    <div className="sideBarAside">
       <h1>People</h1>
       <ul>
         {roles.map((role, index) => (
@@ -13,7 +13,7 @@ const Sidebar = ({ roles, onRoleSelected}) => {
           </li>
         ))}
       </ul>
-    </aside>
+    </div>
   )
 }
 
