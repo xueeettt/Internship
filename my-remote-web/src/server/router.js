@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'ai.zxt19990330@gmail.com',
-    pass: 'qlaz pvix vuqs ywip'
+    user: process.env.REACT_APP_EMAIL_ADDRESS,
+    pass: process.env.REACT_APP_EMAIL_PASS
   }
 });
 
@@ -76,8 +76,29 @@ router.get('/research/content', async (req, res) => {
     res.json(transformedResearches);
 
   } catch (e) {
-    console.error('Failed to fetch team member info', e);
-    res.status(500).send('Error fetching team member info');
+    console.error('Failed to fetch research info', e);
+    res.status(500).send('Error fetching research info');
+}
+});
+
+
+router.get('/news', async (req, res) => {
+  const db = req.app.locals.db;
+  try {
+    const collection = db.collection('News');
+    const news = await collection.find({}).toArray();
+    
+    const transformedNews = news.map(doc => {
+      return Object.keys(doc)
+        .filter(key => key !== '_id')
+        .map(key => doc[key]);
+    }).flat(); 
+
+    res.json(transformedNews);
+
+  } catch (e) {
+    console.error('Failed to fetch news info', e);
+    res.status(500).send('Error fetching news info');
 }
 });
 

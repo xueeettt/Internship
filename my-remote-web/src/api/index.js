@@ -4,7 +4,8 @@ const base = {
   baseUrl: "http://localhost:5566",
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
-  sendEmail: "/api/contact/send-email"
+  sendEmail: "/api/contact/send-email",
+  news: "/api/news"
 }
 
 const api = {
@@ -23,6 +24,10 @@ const api = {
         console.error('Failed to send contact form data:', error);
         throw error;
       });
+  },
+
+  getNews() {
+    return axios.get(base.baseUrl + base.news)
   }
 }
 

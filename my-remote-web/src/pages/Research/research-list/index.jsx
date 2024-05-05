@@ -7,6 +7,7 @@ const ResearchList = ( selectedResearch ) => {
 
   useEffect(() => {
     api.getResearchInfo().then(res => {
+      console.log(res);
       if (res.status === 200) {
         const filteredResearch = res.data.filter(research => research.name === selectedResearch.selectedResearch);
         // console.log(filteredResearch);

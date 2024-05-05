@@ -7,8 +7,6 @@ const apiKey = process.env.REACT_APP_PAPER_METRIC_KEY;
 
 const fetchMetrics = async (metricType) => {
 
-  console.log('API Key:', process.env.REACT_APP_PAPER_METRIC_KEY);
-
   const url = `https://api.elsevier.com/analytics/scival/author/metrics?metricTypes=${metricType}&authors=${authorIds}&yearRange=10yrs&includeSelfCitations=true&byYear=false&includedDocs=AllPublicationTypes&journalImpactType=CiteScore&showAsFieldWeighted=false&indexType=hIndex&apiKey=${apiKey}`;
 
   const response = await fetch(url, {

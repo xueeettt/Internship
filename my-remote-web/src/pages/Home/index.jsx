@@ -6,6 +6,7 @@ import Team from "../../assets/images/team.png";
 import Citation from "../../components/citation";
 import GoogleMap from "../../components/google-map";
 import "./style.less";
+import News from "../../components/news";
 
 const Home = () => {
 
@@ -75,6 +76,10 @@ const Home = () => {
         </div>
         <img src={Team} alt="" className="team-pic"/>
       </div>
+      <div className="divider"></div>
+      <div className="news">
+        <News/>
+      </div>
       <Citation/>
       <div className="info-container">
         <div className="map">
@@ -88,6 +93,7 @@ const Home = () => {
         </ul>
 
       </div>
+      
     </div>
 
   )
