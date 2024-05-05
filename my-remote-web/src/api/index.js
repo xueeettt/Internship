@@ -5,7 +5,8 @@ const base = {
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
   sendEmail: "/api/contact/send-email",
-  news: "/api/news"
+  news: "/api/news",
+  papers: "/api/publication/papers"
 }
 
 const api = {
@@ -28,6 +29,10 @@ const api = {
 
   getNews() {
     return axios.get(base.baseUrl + base.news)
+  },
+
+  getPapers() {
+    return axios.get(base.baseUrl + base.papers)
   }
 }
 

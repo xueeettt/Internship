@@ -102,4 +102,24 @@ router.get('/news', async (req, res) => {
 }
 });
 
+router.get('/publication/papers', async (req, res) => {
+  const db = req.app.locals.db;
+  try {
+    const collection = db.collection('Publication');
+    const papers = await collection.find({}).toArray();
+    
+    const transformedPapers = papers.map(doc => {
+      return Object.keys(doc)
+        .filter(key => key !== '_id')
+        .map(key => doc[key]);
+    }).flat(); 
+
+    res.json(transformedPapers);
+
+  } catch (e) {
+    console.error('Failed to fetch papers info', e);
+    res.status(500).send('Error fetching papers info');
+  }
+});
+
 module.exports = router;
