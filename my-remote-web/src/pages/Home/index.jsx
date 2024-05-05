@@ -32,10 +32,10 @@ const Home = () => {
       <div className="mission">
         <img src={MissionBackgroundImg} alt="" className="mission-pic"/>
         <div className="translucent-red-box">
-          <h2>Our Mission</h2>
-          <p>
+          <div className="text">Our Mission</div>
+          <div className="content">
             The REMOD Lab is committed to advancing the field of regenerative engineering and modeling of osteochondral disease through innovative research, interdisciplinary collaboration, and translation of scientific discoveries into clinical applications. 
-          </p>
+          </div>
         </div>
       </div>
       <div className="presentation">
