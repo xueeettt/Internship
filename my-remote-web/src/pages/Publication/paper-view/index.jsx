@@ -8,9 +8,11 @@ const PaperView = (props) => {
   }
 
   return (
-    <div className="paper" onClick={handleOnClick}>
-      <div className="paper-name">
-        {props.data.name}
+    <div className="paper">
+      <div className="paper-link" onClick={handleOnClick}>
+        <div className="paper-name">
+          {props.data.name}
+        </div>
       </div>
       <div className="paper-info">
         {props.data.info}
