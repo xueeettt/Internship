@@ -19,7 +19,7 @@ async function main() {
 
       app.use(express.json());
       app.use('/api', router);
-      
+
       app.listen(5566, () => {
           console.log('Server is running on http://localhost:5566');
       });
