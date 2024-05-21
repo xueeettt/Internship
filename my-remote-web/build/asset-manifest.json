@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9c63ef75.css",
+    "main.js": "/static/js/main.3c87ce07.js",
+    "static/media/team.png": "/static/media/team.018cc64cbfb5029ca2d2.png",
+    "static/media/project-1.jpg": "/static/media/project-1.9dd026950b068569db9a.jpg",
+    "static/media/mission-background-pic.jpg": "/static/media/mission-background-pic.107d8b1a0c2c63294dd2.jpg",
+    "static/media/citation-background.jpg": "/static/media/citation-background.768573f74ac4a510fc12.jpg",
+    "static/media/Remote-icon.jpg": "/static/media/Remote-icon.69d23c49ef11f67147fa.jpg",
+    "index.html": "/index.html",
+    "main.9c63ef75.css.map": "/static/css/main.9c63ef75.css.map",
+    "main.3c87ce07.js.map": "/static/js/main.3c87ce07.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9c63ef75.css",
+    "static/js/main.3c87ce07.js"
+  ]
+}

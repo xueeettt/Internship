@@ -20,9 +20,11 @@ async function main() {
       app.use(express.json());
       app.use('/api', router);
 
-      app.listen(5566, () => {
-          console.log('Server is running on http://localhost:5566');
-      });
+      const PORT = process.env.PORT || 3000;
+
+      app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
   } catch (e) {
       console.error("Failed to connect to MongoDB", e);
       await client.close();
