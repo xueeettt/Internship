@@ -3,6 +3,7 @@ const app = express();
 const router = require("./router");
 const cors = require("cors");
 const { MongoClient} = require('mongodb');
+const port = 5566;
 
 app.use(cors());
 app.use(express.json());
@@ -20,8 +21,9 @@ async function main() {
       app.use(express.json());
       app.use('/api', router);
 
-      app.listen(5566, () => {
-          console.log('Server is running on http://0.0.0.0:5566');
+
+      app.listen(port,'0.0.0.0', () => {
+          console.log('Server is running on http://0.0.0.0:${port}');
       });
   } catch (e) {
       console.error("Failed to connect to MongoDB", e);
