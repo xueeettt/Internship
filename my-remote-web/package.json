@@ -61,6 +61,8 @@
     "semver": "^7.3.5",
     "source-map-loader": "^3.0.0",
     "style-loader": "^3.3.1",
+    "string-width": "^4.2.3",
+    "emoji-regex": "^8.0.0",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "tailwindcss": "^3.0.2",
