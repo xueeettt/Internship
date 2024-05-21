@@ -21,7 +21,7 @@ async function main() {
       app.use('/api', router);
 
       app.listen(5566, () => {
-          console.log('Server is running on http://localhost:5566');
+          console.log('Server is running on http://0.0.0.0:5566');
       });
   } catch (e) {
       console.error("Failed to connect to MongoDB", e);
