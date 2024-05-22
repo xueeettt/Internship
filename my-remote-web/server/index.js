@@ -17,11 +17,14 @@ async function main() {
 
       app.locals.db = client.db("my-remote-web");
 
+      app.get('/', (req, res) => {
+        res.send('Welcome to my Node.js server!');
+      });
+
       app.use(express.json());
       app.use('/api', router);
 
       const port = 5566;
-
 
       app.listen(port,'0.0.0.0', () => {
           console.log(`Server is running on http://0.0.0.0:${port}`);
