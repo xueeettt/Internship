@@ -54,7 +54,7 @@ router.get('/bio/team-member', async (req, res) => {
     res.json(transformedTeamMembers);
 
   } catch (e) {
-    console.error('Failed to fetch team member info', e);
+    console.error('Failed to fetch team member info', e.response.data);
     res.status(500).send('Error fetching team member info');
 }
 });
@@ -77,7 +77,7 @@ router.get('/research/content', async (req, res) => {
     res.json(transformedResearches);
 
   } catch (e) {
-    console.error('Failed to fetch research info', e);
+    console.error('Failed to fetch research info', e.response.data);
     res.status(500).send('Error fetching research info');
 }
 });
@@ -98,7 +98,7 @@ router.get('/news', async (req, res) => {
     res.json(transformedNews);
 
   } catch (e) {
-    console.error('Failed to fetch news info', e);
+    console.error('Failed to fetch news info', e.response.data);
     res.status(500).send('Error fetching news info');
 }
 });
@@ -118,7 +118,7 @@ router.get('/publication/papers', async (req, res) => {
     res.json(transformedPapers);
 
   } catch (e) {
-    console.error('Failed to fetch papers info', e);
+    console.error('Failed to fetch papers info', e.response.data);
     res.status(500).send('Error fetching papers info');
   }
 });
