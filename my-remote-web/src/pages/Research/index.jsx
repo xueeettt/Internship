@@ -10,7 +10,6 @@ const Research = () => {
   const [selectedResearch, setSelectedResearch] = useState('');
   const [searchParams] = useSearchParams();
   const researchName = searchParams.get('researchName');
-  // console.log(researchName);
 
   useEffect(() => {
     
@@ -18,7 +17,6 @@ const Research = () => {
       if (res.status === 200) {
         const names = res.data.map(item => item.name);
         setResearches(names);
-        // console.log(researchName);
         if (researchName && names.includes(researchName)) {
           setSelectedResearch(researchName);
           
@@ -27,7 +25,7 @@ const Research = () => {
         }
       }
     });
-  }, [researchName, researches]);
+  }, [researchName]);
 
   const handleResearchSelected = (research) => {
     setSelectedResearch(research);

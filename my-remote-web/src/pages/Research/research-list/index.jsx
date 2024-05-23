@@ -3,14 +3,15 @@ import api from "../../../api";
 import ResearchView from "../research-view";
 
 const ResearchList = ( selectedResearch ) => {
+  // console.log(selectedResearch);
+
   const [research, setResearch] = useState([]);
 
   useEffect(() => {
     api.getResearchInfo().then(res => {
-      console.log(res);
+      // console.log(res);
       if (res.status === 200) {
         const filteredResearch = res.data.filter(research => research.name === selectedResearch.selectedResearch);
-        // console.log(filteredResearch);
         setResearch(filteredResearch);
       };
     });

@@ -1,26 +1,26 @@
 import axios from "axios";
 
 const base = {
-  baseUrl: "http://0.0.0.0:5566",
+  baseUrl: "http://remod.online:5566",
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
   sendEmail: "/api/contact/send-email",
   news: "/api/news",
   papers: "/api/publication/papers"
-}
+};
 
 const api = {
   getTeamBio() {
-    return axios.get(base.baseUrl + base.teamBio)
+    return axios.get(base.baseUrl + base.teamBio);
   },
 
   getResearchInfo() {
-    return axios.get(base.baseUrl + base.researchContent)
+    return axios.get(base.baseUrl + base.researchContent);
   },
 
   sendContactForm(data) {
     return axios.post(base.baseUrl + base.sendEmail, data)
-      .then(response => response.data) 
+      .then(response => response.data)
       .catch(error => {
         console.error('Failed to send contact form data:', error);
         throw error;
@@ -28,12 +28,12 @@ const api = {
   },
 
   getNews() {
-    return axios.get(base.baseUrl + base.news)
+    return axios.get(base.baseUrl + base.news);
   },
 
   getPapers() {
-    return axios.get(base.baseUrl + base.papers)
+    return axios.get(base.baseUrl + base.papers);
   }
-}
+};
 
-export default api
+export default api;
