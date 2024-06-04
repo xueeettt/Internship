@@ -44,7 +44,7 @@ router.get('/bio/team-member', async (req, res) => {
   try {
     const collection = db.collection('Bio');
     const teamMembers = await collection.find({}).toArray();
-    console.log(teamMembers);
+    // console.log(teamMembers);
     const transformedTeamMembers = teamMembers.map(doc => {
       return Object.keys(doc)
         .filter(key => key !== '_id') // 过滤掉 _id 键

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const base = {
-  baseUrl: "http://remod.online:5566",
+  baseUrl: "https://localhost:5566",
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
   sendEmail: "/api/contact/send-email",

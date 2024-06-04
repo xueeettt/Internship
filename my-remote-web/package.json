@@ -73,12 +73,15 @@
     "webpack-manifest-plugin": "^4.0.2",
     "workbox-webpack-plugin": "^6.4.1"
   },
+
   "scripts": {
-    "start": "concurrently \"node server/index.js\" \"npm run start-front\"",
-    "start-front": "node scripts/start.js",
+    "start-server": "node server/index.js",
+    "start": "node scripts/start.js",
+    
     "build": "node scripts/build.js",
     "test": "node scripts/test.js"
   },
+
   "eslintConfig": {
     "extends": [
       "react-app",
