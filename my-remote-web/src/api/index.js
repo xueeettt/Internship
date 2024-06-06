@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const base = {
-  baseUrl: "http://3.27.137.236:5566",
+  baseUrl: "http://0.0.0.0:5566",
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
   sendEmail: "/api/contact/send-email",
@@ -28,6 +28,7 @@ const api = {
   },
 
   getNews() {
+    console.log(api);
     return axios.get(base.baseUrl + base.news);
   },
 
