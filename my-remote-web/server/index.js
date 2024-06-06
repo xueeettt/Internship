@@ -21,8 +21,8 @@ async function main() {
     app.locals.db = client.db("my-remote-web");
 
     const port = 5566;
-    app.listen(port, () => {
-      console.log(`Server is running on http://3.27.137.236:${port}`);
+    app.listen(port, '0.0.0.0', () => {
+      console.log(`Server is running on http://0.0.0.0:${port}`);
     });
   } catch (e) {
     console.error("Failed to connect to MongoDB", e);
