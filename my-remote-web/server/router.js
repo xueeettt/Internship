@@ -88,6 +88,7 @@ router.get('/news', async (req, res) => {
   try {
     const collection = db.collection('News');
     const news = await collection.find({}).toArray();
+    console.log('News:', news);
     
     const transformedNews = news.map(doc => {
       return Object.keys(doc)
@@ -98,9 +99,12 @@ router.get('/news', async (req, res) => {
     res.json(transformedNews);
 
   } catch (e) {
-    console.error('Failed to fetch news info', e.response.data);
-    res.status(500).send('Error fetching news info');
-}
+      console.error('Failed to fetch news info', e);
+      if (e.response) {
+          console.error('Error response data:', e.response.data);
+      }
+      res.status(500).send('Error fetching news info');
+  }
 });
 
 router.get('/publication/papers', async (req, res) => {
