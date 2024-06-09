@@ -88,7 +88,7 @@ router.get('/news', async (req, res) => {
   try {
     const collection = db.collection('News');
     const news = await collection.find({}).toArray();
-    console.log('News:', news);
+    // console.log('News:', news);
     
     const transformedNews = news.map(doc => {
       return Object.keys(doc)
