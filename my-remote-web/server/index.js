@@ -6,7 +6,9 @@ const router = require('./router');
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://13.239.31.245:3000","http://remod.online"]
+}));
 app.use(express.json());
 app.use("/api", router);
 
