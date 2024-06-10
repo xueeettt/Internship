@@ -7,7 +7,7 @@ const app = express();
 
 // 设置CORS配置
 const corsOptions = {
-  origin: ["http://13.239.31.245:3000", "http://remod.online"],
+  origin: ["http://3.27.85.183:3000", "http://remod.online"],
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
@@ -30,8 +30,8 @@ async function main() {
     app.locals.db = client.db("my-remote-web");
 
     const port = 5566;
-    app.listen(port, '0.0.0.0', () => {
-      console.log(`Server is running on http://0.0.0.0:${port}`);
+    app.listen(port, '3.27.85.183', () => {
+      console.log(`Server is running on http://3.27.85.183:${port}`);
     });
   } catch (e) {
     console.error("Failed to connect to MongoDB", e);
