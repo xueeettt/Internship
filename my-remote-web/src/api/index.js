@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const base = {
-  baseUrl: "http://3.27.85.183:5566",
+  // baseUrl: "http://3.27.85.183:5566",
+  baseUrl: "http://127.0.0.1:5566",
   teamBio: "/api/bio/team-member",
   researchContent: "/api/research/content",
   sendEmail: "/api/contact/send-email",

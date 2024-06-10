@@ -2,7 +2,7 @@ import React from "react";
 import "./style.less";
 import api from "../../api";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const ContactBoard = () => {
 
@@ -31,16 +31,16 @@ const ContactBoard = () => {
       <div className="contactInfoBoard">
         <h2>Contact Information</h2>
         <div className="contactInfo">
-          <p>
+          {/* <p>
             <FontAwesomeIcon icon={faPhone} />&nbsp;&nbsp;&nbsp;
             +1012 3456 789
-          </p>
+          </p> */}
           <p>
             <FontAwesomeIcon icon={faEnvelope} />&nbsp;&nbsp;&nbsp;
-            demo@gmail.com</p>
+            research.remod@gmail.com</p>
           <p>
             <FontAwesomeIcon icon={faLocationDot} />&nbsp;&nbsp;&nbsp;
-            132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
+            29 Regent St, Fitzroy VIC 3065</p>
         </div>
       </div>
       <div className="contactFormBoard">

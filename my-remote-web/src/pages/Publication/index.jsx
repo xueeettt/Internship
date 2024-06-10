@@ -20,7 +20,7 @@ const Publication = () => {
 
   useEffect(() => {
     const years = [];
-    for (let year = 2024; year >= 2013; year--) {
+    for (let year = 2024; year >= 2007; year--) {
       const yearStr = year.toString();
       const filteredPapers = papers.filter(paper => paper.year === yearStr);
 

@@ -5,8 +5,8 @@ const nodemailer = require('nodemailer');
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: "ai.zxt19990330@gmail.com",
-    pass: "pflb balu vapv xold"
+    user: "research.remod@gmail.com",
+    pass: "euml qgef vapb bvpd"
   }
 });
 
@@ -21,7 +21,7 @@ router.post('/contact/send-email', async (req, res) => {
     let info = await transporter.sendMail({
       from: email,
       replyTo: email,
-      to: 'ai.zxt19990330@gmail.com',
+      to: 'research.remod@gmail.com',
       subject: `Remote-Web-Request from ${firstName} ${lastName}`,
       text: `${message}\n${phone}\n${firstName} ${lastName}`,
     });

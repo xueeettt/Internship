@@ -3,7 +3,7 @@ import "./style.less";
 import TeamIcon from "../../assets/images/Remote-icon.jpg";
 import LinkMenuBottom from "../linkMenuBottom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faEnvelope} from "@fortawesome/free-solid-svg-icons";
 
 const BottomNav = () => {
   return (
@@ -19,12 +19,12 @@ const BottomNav = () => {
         </div>
         <div className="info">
           <FontAwesomeIcon icon={faEnvelope} />
-          serena.duchi@gmail.com
+          research.remod@gmail.com
         </div>
-        <div className="info">
+        {/* <div className="info">
           <FontAwesomeIcon icon={faPhone} />
           +61 0000000000
-        </div>
+        </div> */}
       </div>
     </div>
   );
