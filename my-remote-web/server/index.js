@@ -7,7 +7,7 @@ const app = express();
 
 // 设置CORS配置
 const corsOptions = {
-  origin: ["http://3.26.0.131:3000", "http://remod.online", "http://localhost:3000"],
+  origin: ["http://3.27.114.172:3000", "http://remod.online", "http://localhost:3000"],
   // origin: "http://localhost:3000",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
